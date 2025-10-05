@@ -1,13 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ *    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * Cualquier modificacion se vera afectada los demas clases hijas por eso al momento de modificar algo tambien modificar las demas clases 
+ * 
+ * Clase padre para los empleados con los datos generales que se necesitan para agregarlos a sistema
  */
 package technova;
 
-/**
- *
- * @author juanm
- */
+
 public class Empleado {
   protected  int id;
   protected  String nombre;
@@ -56,53 +55,11 @@ public class Empleado {
     public void setSueldoBase(int sueldoBase) {
         this.sueldoBase = sueldoBase;
     }
-  
-    public class programmers extends Empleado{
 
-        public programmers(int sistemas_terminados, int id, String nombre, int anioContrato, int sueldoBase) {
-            super(id, nombre, anioContrato, sueldoBase);
-            this.sistemas_terminados = 0;
-        }
-        
-        protected int sistemas_terminados;
-        int BONO = 100000;
-        
-        public int trabajar_programador() {
-        System.out.println(nombre + " está programando/implementando funcionalidades");
-        sistemas_terminados++;
-        
-        if(sistemas_terminados > 0  ){
-            sueldoBase += BONO;
-            
-        }else{
-            System.out.println("No cumples con los requisitos para el bono!");
-            return sueldoBase;
-        }
-            return 0;
-      }
-        
+    @Override
+    public String toString() {
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", anioContrato=" + anioContrato + ", sueldoBase=" + sueldoBase + '}';
     }
     
-    public class tester extends Empleado{
-
-        public tester(int bugs_sistemas_encontrados, int id, String nombre, int anioContrato, int sueldoBase) {
-            super(id, nombre, anioContrato, sueldoBase);
-            this.bugs_sistemas_encontrados = 0;
-        }
-        
-        protected int bugs_sistemas_encontrados;
-        int BONO = 35000;
-        
-        
-        
-    }
     
-    public class ProjectManager{
-        protected int Proyectos_finalizados;
-        int BONO = 200000;
-         
-        
-    }
-
-  
 }
